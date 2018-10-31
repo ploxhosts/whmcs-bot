@@ -1,0 +1,30 @@
+.container {
+    text-align: center;
+    font-family: sans-serif;
+    text-transform: uppercase;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+#invisible {
+    visibility: hidden;
+}
+
+input {
+    margin-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+body {
+    height: 1920px;
+    width: 100%;
+    background-color: #8cd3f9;
+}

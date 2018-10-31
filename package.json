@@ -1,0 +1,24 @@
+{
+  "name": "skidhost",
+  "version": "1.0.0",
+  "dependencies": {
+    "body-parser": "latest",
+    "discord.js": "^11.4.2",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-fileupload": "^1.0.0",
+    "mysql": "^2.16.0",
+    "node-fetch": "^2.2.0",
+    "sqlite": "^3.0.0",
+    "whmcs": "^1.2.2",
+    "ws": "^6.1.0"
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

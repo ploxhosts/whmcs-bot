@@ -1,0 +1,32 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> Discord | Link </title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <form>
+            Discord Username: <input type="text" name="username" placeholder="DayColor" id="username" required>
+            Discord Discriminator: <input type="text" name="discriminator" placeholder="0001" id="discriminator" required>
+        </form>
+        <button onclick="onClick()">SUBMIT</button>
+
+        <span id="invisible"> <%= clientId%> </span>
+
+        <script>
+            function onClick() {
+                let clientId = document.getElementById('invisible').innerHTML.slice(1, -1);
+                let username = document.getElementById('username').value;
+                let discriminator = document.getElementById('discriminator').value;
+
+                if (username === '' || discriminator === '') return console.log('Returned');
+
+                window.location.replace(`http://localhost:5000/api/link/?clientId=${clientId}&username=${username}&discriminator=${discriminator}`);
+            }
+        </script>
+    </div>
+
+</body>
+</html>

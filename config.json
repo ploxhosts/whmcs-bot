@@ -1,0 +1,30 @@
+{
+  "prefix": "!",
+  "embed": {
+    "colors": {
+      "error": "0xd30202",
+      "warn": "0xf7c820",
+      "success": "0x54d62c",
+      "main": "0x4286f4",
+      "log": "0x42b3f4"
+    },
+    "footer": "PloxHost"
+  },
+  "staffRoles": [
+    "Staff"
+  ],
+  "welcome": {
+    "message": "Welcome to PloxHost discord server!",
+    "how_to_verify": "blah blah blah to verify.",
+    "are_you_client": "Are you client with us? If yes react with blah blah 🇾, 🇳"
+  },
+  "roles": {
+    "verify": "Verified",
+    "client": "Client"
+  },
+  "whmcs": {
+    "url": "http://skidhost.club/whmcs/includes/api.php",
+    "username": "2sY6KxBLjMkWIlK1EoCCSnKXF9c0qqEr",
+    "password": "8zO7dMtDgyVxNpDSQEkoYWVALbfduilk"
+  }
+}
