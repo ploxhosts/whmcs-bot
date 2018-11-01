@@ -140,6 +140,6 @@ fs.readdir('./events/', (err, files) => {
 
 
 //expressSetup(); call if you want to use the webserver anyways.
-expressSetup;
+expressSetup();
 
 client.login(token.token);

@@ -14,9 +14,27 @@
     "Staff"
   ],
   "welcome": {
-    "message": "Welcome to PloxHost discord server!",
+    "message": "
+    **Hello**
+
+    Welcome to the PloxHost Discord Server! We are glad you are here.
+    Let's get some things cleared up! Please read everything listed below fully.
+
+    *Info*
+    > [Web](https://plox.host)
+> [Billing](https://billing.plox.host)
+> [Multicraft](https://multicraft.plox.host)
+> [Knowledge Base](https://ploxhost.crisp.help)
+
+*Rules*
+Please review our discord rules located in the #rules channel
+
+*Support*
+You can create a support ticket by doing `-new`
+
+Thank you!",
     "how_to_verify": "blah blah blah to verify.",
-    "are_you_client": "Are you client with us? If yes react with blah blah 🇾, 🇳"
+    "are_you_client": "Are you client with us? If yes react with PloxHost 🇾"
   },
   "roles": {
     "verify": "Verified",

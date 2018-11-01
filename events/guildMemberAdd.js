@@ -11,7 +11,6 @@ module.exports = async (client, member) => {
     try {
         let dm = await member.createDM();
         await dm.send(Embed(config.welcome.message, 'main'));
-        await dm.send(Embed(config.welcome.how_to_verify, 'main'));
         let verifyMessage = await dm.send(Embed(config.welcome.are_you_client, 'main'));
         await verifyMessage.react('🇾');
         await verifyMessage.react('🇳');
