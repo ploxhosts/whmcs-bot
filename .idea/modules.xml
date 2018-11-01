@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/skidhost.iml" filepath="$PROJECT_DIR$/.idea/skidhost.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/PloxHost-Bot.iml" filepath="$PROJECT_DIR$/.idea/PloxHost-Bot.iml" />
     </modules>
   </component>
 </project>

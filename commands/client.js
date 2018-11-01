@@ -4,6 +4,7 @@ const whmcsGet = require('../functions/whmcsGet.js');
 const sql = require('sqlite');
 sql.open('./bot.sqlite');
 
+// welp, this is just great...
 exports.run = async (client, msg, args) => {
     let member = msg.mentions.members.first();
     if (!member) return Embed(msg.channel, `You must mention the member you wish to get the information of.`, 'error', 'Error');

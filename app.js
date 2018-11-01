@@ -10,7 +10,6 @@ sql.open('./bot.sqlite');
 const express = require('express');
 const app = express();
 const port = 5000;
-
 const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: true });
 const url = require('url');
@@ -140,6 +139,7 @@ fs.readdir('./events/', (err, files) => {
 
 
 //expressSetup(); call if you want to use the webserver anyways.
-expressSetup();
+WebSocketSetup;
 
 client.login(token.token);
+
