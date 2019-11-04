@@ -14,25 +14,7 @@
     "Staff"
   ],
   "welcome": {
-    "message": "
-    **Hello**
-
-    Welcome to the PloxHost Discord Server! We are glad you are here.
-    Let's get some things cleared up! Please read everything listed below fully.
-
-    *Info*
-    > [Web](https://plox.host)
-> [Billing](https://billing.plox.host)
-> [Multicraft](https://multicraft.plox.host)
-> [Knowledge Base](https://ploxhost.crisp.help)
-
-*Rules*
-Please review our discord rules located in the #rules channel
-
-*Support*
-You can create a support ticket by doing `-new`
-
-Thank you!",
+    "message": "Hello",
     "how_to_verify": "blah blah blah to verify.",
     "are_you_client": "Are you client with us? If yes react with PloxHost 🇾"
   },
@@ -41,7 +23,7 @@ Thank you!",
     "client": "Client"
   },
   "whmcs": {
-    "url": "http://skidhost.club/whmcs/includes/api.php",
+    "url": "http://ploxhosttest.cf/whmcs/includes/api.php",
     "username": "2sY6KxBLjMkWIlK1EoCCSnKXF9c0qqEr",
     "password": "8zO7dMtDgyVxNpDSQEkoYWVALbfduilk"
   }

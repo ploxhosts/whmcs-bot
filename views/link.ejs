@@ -8,7 +8,7 @@
 
     <div class="container">
         <form>
-            Discord Username: <input type="text" name="username" placeholder="DayColor" id="username" required>
+            Discord Username: <input type="text" name="username" placeholder="markd" id="username" required>
             Discord Discriminator: <input type="text" name="discriminator" placeholder="0001" id="discriminator" required>
         </form>
         <button onclick="onClick()">SUBMIT</button>
@@ -23,7 +23,7 @@
 
                 if (username === '' || discriminator === '') return console.log('Returned');
 
-                window.location.replace(`http://localhost:5000/api/link/?clientId=${clientId}&username=${username}&discriminator=${discriminator}`);
+                window.location.replace(`http://23.238.204.89:5000/api/link/?clientId=${clientId}&username=${username}&discriminator=${discriminator}`);
             }
         </script>
     </div>
