@@ -65,19 +65,21 @@ function expressSetup() {
         let discriminator = req.query.discriminator;
         console.log(discriminator);
         let username = decodeURI(req.query.username);
+        let id = req.query.id
+        console.log(id);
         console.log(username);
         let clientId = req.query.clientId;
         console.log(clientId);
         let user = client.users.find(u => u.username === username && u.discriminator === discriminator);
 
-        //if (user) {
-          //  if (!isNaN(discriminator) && discriminator.toString().length === 4) isFail = false;
+       //if (user) {
+         //   if (!isNaN(discriminator) && discriminator.toString().length === 4) isFail = false;
         //}
 
         //if (isFail === false) {
           //  let isCatch = false;
 
-            await sql.run(`INSERT INTO whmcs VALUES (?, ?)`, [clientId, user.id]).catch((err) => {
+            await sql.run(`INSERT INTO whmcs VALUES (?, ?)`, [clientId, id]).catch((err) => {
                 fail();
                 isCatch = true;
             });
