@@ -61,18 +61,21 @@ function expressSetup() {
     });
 
     app.get('/api/link/', async (req, res) => {
-        let isFail = true;
+        //let isFail = true;
         let discriminator = req.query.discriminator;
+        console.log(discriminator);
         let username = decodeURI(req.query.username);
+        console.log(username);
         let clientId = req.query.clientId;
+        console.log(clientId);
         let user = client.users.find(u => u.username === username && u.discriminator === discriminator);
 
-        if (user) {
-            if (!isNaN(discriminator) && discriminator.toString().length === 4) isFail = false;
-        }
+        //if (user) {
+          //  if (!isNaN(discriminator) && discriminator.toString().length === 4) isFail = false;
+        //}
 
-        if (isFail === false) {
-            let isCatch = false;
+        //if (isFail === false) {
+          //  let isCatch = false;
 
             await sql.run(`INSERT INTO whmcs VALUES (?, ?)`, [clientId, user.id]).catch((err) => {
                 fail();
@@ -85,15 +88,15 @@ function expressSetup() {
                 pathname: "/success",
                 query: req.query
             }));
-        } else {
-            fail();
-        }
+     //   } else {
+       //     fail();
+        //}
 
-        function fail() {
-            res.redirect(url.format({
-                pathname: "/fail"
-            }));
-        }
+        //function fail() {
+          //  res.redirect(url.format({
+            //    pathname: "/fail"
+           // }));
+        //}
     });
 
     app.listen(port, () => {});
