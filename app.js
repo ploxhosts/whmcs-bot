@@ -9,7 +9,7 @@ const sql = require('sqlite');
 sql.open('./bot.sqlite');
 const express = require('express');
 const app = express();
-const port = 5000;
+const port = 80;
 const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: true });
 const url = require('url');
