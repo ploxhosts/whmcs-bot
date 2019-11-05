@@ -49,10 +49,9 @@ function expressSetup() {
 
     
     app.get('/success', (req, res) => {
-        let newusername = decodeURI(req.query.username);
         res.render('success', {
             clientId: clientId,
-            username: newusername,
+            username: req.query.username,
             discriminator: req.query.discriminator
         });
     });
@@ -64,7 +63,7 @@ function expressSetup() {
     app.get('/api/link/', async (req, res) => {
         let isFail = true;
         let discriminator = req.query.discriminator;
-        let username = req.query.username;
+        let newusername = decodeURI(req.query.username);
         let clientId = req.query.clientId;
         let user = client.users.find(u => u.username === username && u.discriminator === discriminator);
 
