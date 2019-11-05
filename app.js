@@ -47,10 +47,12 @@ function expressSetup() {
         res.render('link', {clientId: clientId})
     });
 
+    
     app.get('/success', (req, res) => {
+        let newusername = decodeURI(req.query.username);
         res.render('success', {
             clientId: clientId,
-            username = decodeURI(req.query.username);
+            username: newusername,
             discriminator: req.query.discriminator
         });
     });
