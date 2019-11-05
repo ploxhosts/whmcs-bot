@@ -50,7 +50,7 @@ function expressSetup() {
     app.get('/success', (req, res) => {
         res.render('success', {
             clientId: clientId,
-            username: req.query.username,
+            username = decodeURI(req.query.username);
             discriminator: req.query.discriminator
         });
     });
