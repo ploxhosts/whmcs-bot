@@ -63,7 +63,7 @@ function expressSetup() {
     app.get('/api/link/', async (req, res) => {
         let isFail = true;
         let discriminator = req.query.discriminator;
-        let newusername = decodeURI(req.query.username);
+        let username = decodeURI(req.query.username);
         let clientId = req.query.clientId;
         let user = client.users.find(u => u.username === username && u.discriminator === discriminator);
 
