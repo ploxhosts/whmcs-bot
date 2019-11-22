@@ -8,15 +8,15 @@ sql.open('./bot.sqlite');
 exports.run = async (client, msg, args) => {
     let member = msg.mentions.members.first();
     if (!member) return Embed(msg.channel, `You must mention the member you wish to get the information of.`, 'error', 'Error');
+    let value = await whmcsGet.get({}, 'GetClientsdetails', member);
     let row = await sql.get(`SELECT * FROM whmcs WHERE discordId = "${member.id}"`);
-    }).filter(i => i !== false);
-    let value = await whmcsGet.get({}, 'GetClientsDetails', member);
-        let clientId = value.clients.client.map(i => {
+    if (value === undefined || value.clients.client.length === 0) return Embed(msg.channel, `There was an error performing this command.`, 'error', 'Error');
+    let clientUser = value.clients.client.map(i => {
         if (i['id'] === row.clientId) return i;
         else return false;
-    if (value === undefined || value.clients.client.length === 0) return Embed(msg.channel, `There was an error performing this command.`, 'error', 'Error');
-    if (!row || clientId.length === 0) return Embed(msg.channel, `${member} does not have a WHMCS account or did not link it.`, 'error', 'Error');
-    clientId = clientId[0];
+    }).filter(i => i !== false);
+    if (!row || clientUser.length === 0) return Embed(msg.channel, `${member} does not have a WHMCS account or did not link it.`, 'error', 'Error');
+    clientUser = clientUser[0];
     Embed(msg.channel, `Email: ${clientUser['email']}\nFull name: ${clientUser['firstname']} ${clientUser['lastname']}`, 'main', `${member.user.username}#${member.user.discriminator} Client Info`)
 };
 
