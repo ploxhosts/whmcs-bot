@@ -9,7 +9,7 @@ exports.run = async (client, msg, args) => {
     let member = msg.mentions.members.first();
     if (!member) return Embed(msg.channel, `You must mention the member you wish to get the information of.`, 'error', 'Error');
         let clientid = await sql.get(`SELECT * FROM whmcs WHERE discordId = "${member.id}"`);
-    let value = await whmcsGet.get({}, 'GetClientsdetails', clientid);
+    let value = await whmcsGet.get({}, 'GetClientsdetails', member);
     let row = await sql.get(`SELECT * FROM whmcs WHERE discordId = "${member.id}"`);
     if (value === undefined || value.clients.client.length === 0) return Embed(msg.channel, `There was an error performing this command.`, 'error', 'Error');
     let clientUser = value.clients.client.map(i => {
