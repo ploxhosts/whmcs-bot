@@ -11,7 +11,7 @@ exports.run = async (client, msg, args) => {
     if (!row) return Embed(msg.channel, `${member} does not have a linked WHMCS account.`, 'error', 'Error');
     let clientUser = await whmcsGet.get({ clientid: row.clientId }, 'GetClientsDetails');
     if (!clientUser) return Embed(msg.channel, `${member} does not have a WHMCS account.`, 'error', 'Error');
-    Embed(msg.channel, `Email: ${clientUser['email']}\nFull name: ${clientUser['firstname']} ${clientUser['lastname']}`, 'main', `${member.user.username}#${member.user.discriminator} Client Info`)
+    Embed(msg.channel, `URL: [Click](https://billing.plox.host/WHMCS2017SecureLink/clientssummary.php?userid=${clientUser[`id`]})\nClient ID: ${clientUser['id']}\nEmail: ${clientUser['email']}\nFull Name: ${clientUser['firstname']} ${clientUser['lastname']}\nAddress Line: ${clientUser['address1']} ${clientUser['city']}, ${clientUser['state']}, ${clientUser['countryname']}`, 'main', `▫️ ${member.user.username} | WHMCS Client Lookup`)
 };
 
 function Embed(channel, description, color, title) {
