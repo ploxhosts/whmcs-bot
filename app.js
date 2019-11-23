@@ -80,7 +80,7 @@ function expressSetup() {
           //  let isCatch = false;
 
             await sql.run(`INSERT INTO whmcs VALUES (?, ?)`, [clientId, id]).catch((err) => {
-                fail();
+                work();
                 isCatch = true;
             });
 
@@ -94,11 +94,11 @@ function expressSetup() {
        //     fail();
         //}
 
-        //function fail() {
-          //  res.redirect(url.format({
-            //    pathname: "/fail"
-           // }));
-        //}
+        function work() {
+            res.redirect(url.format({
+                pathname: "/success"
+            }));
+        }
     });
 
     app.listen(port, () => {});
