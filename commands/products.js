@@ -1,15 +1,16 @@
 const config = require(`../config.json`);
 const Discord = require(`discord.js`);
 const whmcsGet = require('../functions/whmcsGet.js');
+const sql = require('sqlite');
+sql.open('./bot.sqlite');
 
 exports.run = async (client, msg, args) => {
     let member = msg.mentions.members.first();
-    if (!member) return Embed(msg.channel, `You must mention the member you wish to check the products of.`, 'error', 'Error');
-    let value = await whmcsGet.get({}, 'GetClientsProducts', member);
-    if (value === undefined) return Embed(msg.channel, `There was an error performing this command.`, 'error', 'Error');
-    console.log(value.products.product);
-    if (value.products === '' || !value.products.product.length || value.products.product.length === 0) return Embed(msg.channel, `${member} does not have any products.`, 'error', 'Error');
-    Embed(msg.channel, `${value.products.product.map(i => `${i.name} - ${i.recurringamount}$`).join('\n')}`, 'main', `${member.user.username}#${member.user.discriminator}'s Products`)
+     let row = await sql.get(`SELECT * FROM whmcs WHERE discordId = "${member.id}"`);
+    if (!row) return;
+    let clientUser = await whmcsGet.get({ clientid: row.clientId }, 'getclientsProducts');
+    if (!clientUser) return Embed(msg.channel, `${member} does not have a WHMCS account or did not link it.`, 'error', 'Error');
+    Embed(msg.channel, `${clientUser.products.product.map(i => `${i.name} - ${i.recurringamount}$`).join('\n')}`, 'main', `${member.user.username}#${member.user.discriminator}'s Products`)
 };
 
 function Embed(channel, description, color, title) {
