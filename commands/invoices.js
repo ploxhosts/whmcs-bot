@@ -12,7 +12,7 @@ exports.run = async (client, msg, args) => {
     let invoices = clientUser.invoices.invoice;
         let descriptions = [];
     if (!clientUser) return Embed(msg.channel, `${member} does not have a WHMCS account or did not link it.`, 'error', 'Error');
-    Embed(msg.channel, `${invoices.map(i => `ID: ${i['id']}\nDescription: ${descriptions[invoices.indexOf(i)]}\nDue: ${i['duedate']}`).join('\n\n')}`, 'main', `${member.user.username}#${member.user.discriminator} Tickets`)
+    Embed(msg.channel, `${invoices.map(i => `ID: ${i['id']}\nDue: ${i['duedate']}`).join('\n\n')}`, 'main', `${member.user.username}#${member.user.discriminator} Tickets`)
 };
 
 function Embed(channel, description, color, title) {
