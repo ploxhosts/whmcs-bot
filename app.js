@@ -86,12 +86,14 @@ function expressSetup() {
                 isCatch = true;
                 let guild = '346715007469355009';
                 const member = discriminator;
-                const crole = guild.roles.find(role => role.name === "Clients");
-                guild.member.addRole(crole);
+                const crole = Discord.guild.roles.find(role => role.name === "Clients");
+                Discord.guild.member.addRole(crole);
 
             });
 
-            if (isCatch === true) return;
+
+
+        if (isCatch === true) return;
 
             res.redirect(url.format({
                 pathname: "/success",
