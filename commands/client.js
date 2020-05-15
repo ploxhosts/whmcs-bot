@@ -5,13 +5,16 @@ const sql = require('sqlite');
 sql.open('./bot.sqlite');
 
 exports.run = async (client, msg, args) => {
-    let member = msg.mentions.members.first();
-    if (!member) return Embed(msg.channel, `You must mention the member you wish to get the information of.`, 'error', 'Error');
-    let row = await sql.get(`SELECT * FROM whmcs WHERE discordId = "${member.id}"`);
-    if (!row) return Embed(msg.channel, `${member} does not have a linked WHMCS account.`, 'error', 'Error');
-    let clientUser = await whmcsGet.get({ clientid: row.clientId }, 'GetClientsDetails');
-    if (!clientUser) return Embed(msg.channel, `${member} does not have a WHMCS account.`, 'error', 'Error');
-    Embed(msg.channel, `URL: [Click](https://billing.plox.host/WHMCS2017SecureLink/clientssummary.php?userid=${clientUser[`id`]})\nClient ID: ${clientUser['id']}\nEmail: ${clientUser['email']}\nFull Name: ${clientUser['firstname']} ${clientUser['lastname']}\nAddress Line: ${clientUser['address1']} ${clientUser['city']}, ${clientUser['state']}, ${clientUser['countryname']}`, 'main', `▫️ ${member.user.username} | WHMCS Client Lookup`)
+    let member = args;
+     // if (!member) return Embed(msg.channel, `You must enter the email you wish to get the information of.`, 'error', 'Error');
+    //   let row = await sql.get(`SELECT * FROM whmcs WHERE discordId = "${member.id}"`);
+//    if (!row) return Embed(msg.channel, `${member} does not have a linked WHMCS account.`, 'error', 'Error');
+    let clientUser = await whmcsGet.get({ email: member }, 'GetClientsDetails');
+    if (clientUser['result'] !== 'error') {
+        Embed(msg.channel, `URL: [Click](https://billing.plox.host/WHMCS2017SecureLink/clientssummary.php?userid=${clientUser['id']})\nClient ID: ${clientUser['id']}\nEmail: ${clientUser['email']}\nFull Name: ${clientUser['firstname']} ${clientUser['lastname']}\nAddress Line: ${clientUser['address1']} ${clientUser['city']}, ${clientUser['state']}, ${clientUser['countryname']}`, 'main', `▫️${args} | WHMCS Client Lookup`)
+    } else {
+        return Embed(msg.channel, `That user does not not exist!`, 'error', 'Error');
+    }
 };
 
 function Embed(channel, description, color, title) {
@@ -29,7 +32,6 @@ exports.conf = {
     guildOnly: false,
     aliases: [],
     permLevel: 1,
-    helpSection: 'whmcs'
 };
 
 exports.help = {

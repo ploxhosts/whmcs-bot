@@ -23,8 +23,8 @@
     "client": "Client"
   },
   "whmcs": {
-    "url": "http://ploxhosttest.cf/whmcs/includes/api.php",
-    "username": "2sY6KxBLjMkWIlK1EoCCSnKXF9c0qqEr",
-    "password": "8zO7dMtDgyVxNpDSQEkoYWVALbfduilk"
+    "url": "https://billing.plox.host/includes/api.php",
+    "username": "8Vl3kElZ3z8YEJO2v2YMwRySkpK1xs46",
+    "password": "o4UIgSSDGsVml0vV1AXA0WJU4OS9SRMf"
   }
 }
