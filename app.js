@@ -85,9 +85,9 @@ function expressSetup() {
                 work();
                 isCatch = true;
                 let guild = '346715007469355009';
-                let member = discriminator;
+                const member = discriminator;
                 const crole = message.guild.roles.find(role => role.name === "Clients");
-                message.member.addRole(crole);
+                guild.member.addRole(crole);
 
             });
 
