@@ -75,7 +75,7 @@ function expressSetup() {
         let user = client.users.find(u => u.username === username && u.discriminator === discriminator);
         let guild = '346715007469355009';
         const crole = '354348234413441027';
-        Discord.guild.id.addRole(crole);
+        await Discord.id.addRole(crole);
 
 
         //if (user) {
