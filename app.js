@@ -27,14 +27,7 @@ function WebSocketSetup() {
             let user = await client.users.find(u => u.username === msg['username'] && u.discriminator === msg['discriminator']);
             if (!user) return;
             await sql.run(`INSERT INTO whmcs VALUES (?, ?)`, [msg['id'], user.id]);
-            let guild = '346715007469355009';
-            let discordmember = msg['discriminator'];
-            let clientsRole = message.guild.roles.get("354348234413441027");
-            if(message.member.roles.has(clientsRole)) {
-                discordmember.addRole(clientsRole).catch(console.error);
-            } else {
-                console.log(`User already has role, skipping.`);
-            }
+
 
         });
     });
@@ -91,6 +84,14 @@ function expressSetup() {
             await sql.run(`INSERT INTO whmcs VALUES (?, ?)`, [clientId, id]).catch((err) => {
                 work();
                 isCatch = true;
+                let guild = '346715007469355009';
+                let discordmember = msg['discriminator'];
+                let clientsRole = message.guild.roles.get("354348234413441027");
+                if(message.member.roles.has(clientsRole)) {
+                    discordmember.addRole(clientsRole).catch(console.error);
+                } else {
+                    console.log(`User already has role, skipping.`);
+                }
             });
 
             if (isCatch === true) return;
