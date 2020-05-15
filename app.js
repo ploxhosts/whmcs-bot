@@ -34,7 +34,7 @@ function WebSocketSetup() {
 }
 
 
-function expressSetup() {
+function expressSetup(guild, data) {
     let clientId;
 
     app.set('view engine', 'ejs');
@@ -74,6 +74,7 @@ function expressSetup() {
         console.log(clientId);
         let user = client.users.find(u => u.username === username && u.discriminator === discriminator);
         let guild = '346715007469355009';
+        new Discord.GuildMember(client, data, guild);
         const crole = '354348234413441027';
         await Discord.id.addRole(crole);
 
