@@ -33,6 +33,7 @@ function WebSocketSetup() {
     });
 }
 
+
 function expressSetup() {
     let clientId;
 
@@ -84,10 +85,10 @@ function expressSetup() {
             await sql.run(`INSERT INTO whmcs VALUES (?, ?)`, [clientId, id]).catch((err) => {
                 work();
                 isCatch = true;
+
                 let guild = '346715007469355009';
-                const member = discriminator;
                 const crole = '354348234413441027';
-                Discord.guild.member.addRole(crole);
+                Discord.guild.discriminator.addRole(crole);
 
             });
 
