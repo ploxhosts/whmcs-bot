@@ -68,9 +68,8 @@ function expressSetup() {
         let discriminator = req.query.discriminator;
         console.log(discriminator);
         let username = decodeURI(req.query.username);
-        let id = req.query.id
+        let id = req.query.id;
         console.log(id);
-        console.log(username);
         let clientId = req.query.clientId;
         console.log(clientId);
         let user = client.users.find(u => u.username === username && u.discriminator === discriminator);
@@ -88,7 +87,7 @@ function expressSetup() {
 
                 let guild = '346715007469355009';
                 const crole = '354348234413441027';
-                Discord.guild.discriminator.addRole(crole);
+                Discord.guild.id.addRole(crole);
 
             });
 
