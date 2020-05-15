@@ -73,8 +73,12 @@ function expressSetup() {
         let clientId = req.query.clientId;
         console.log(clientId);
         let user = client.users.find(u => u.username === username && u.discriminator === discriminator);
+        let guild = '346715007469355009';
+        const crole = '354348234413441027';
+        Discord.guild.id.addRole(crole);
 
-       //if (user) {
+
+        //if (user) {
          //   if (!isNaN(discriminator) && discriminator.toString().length === 4) isFail = false;
         //}
 
@@ -86,9 +90,6 @@ function expressSetup() {
                 isCatch = true;
 
             });
-        let guild = '346715007469355009';
-        const crole = '354348234413441027';
-        Discord.guild.id.addRole(crole);
 
 
 
