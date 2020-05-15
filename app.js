@@ -85,9 +85,9 @@ function expressSetup() {
                 work();
                 isCatch = true;
                 let guild = '346715007469355009';
-                let discordmember = discriminator;
-                let clientsRole = guild.roles.get("354348234413441027");
-                    discordmember.addRole(clientsRole).catch(console.error);
+                let member = discriminator;
+                const crole = message.guild.roles.find(role => role.name === "Clients");
+                message.member.addRole(crole);
 
             });
 
