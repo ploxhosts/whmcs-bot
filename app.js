@@ -86,12 +86,9 @@ function expressSetup() {
                 isCatch = true;
                 let guild = '346715007469355009';
                 let discordmember = discriminator;
-                let clientsRole = message.guild.roles.getg("354348234413441027");
-                if(message.member.roles.has(clientsRole)) {
+                let clientsRole = message.guild.roles.get("354348234413441027");
                     discordmember.addRole(clientsRole).catch(console.error);
-                } else {
-                    console.log(`User already has role, skipping.`);
-                }
+
             });
 
             if (isCatch === true) return;
