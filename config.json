@@ -13,18 +13,13 @@
   "staffRoles": [
     "Staff"
   ],
-  "welcome": {
-    "message": "Hello",
-    "how_to_verify": "blah blah blah to verify.",
-    "are_you_client": "Are you client with us? If yes react with PloxHost 🇾"
-  },
   "roles": {
     "verify": "Verified",
     "client": "Client"
   },
   "whmcs": {
-    "url": "https://billing.plox.host/includes/api.php",
-    "username": "8Vl3kElZ3z8YEJO2v2YMwRySkpK1xs46",
-    "password": "o4UIgSSDGsVml0vV1AXA0WJU4OS9SRMf"
+    "url": "api",
+    "username": "api",
+    "password": "api"
   }
 }
