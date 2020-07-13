@@ -11,7 +11,7 @@ exports.run = async (client, msg, args) => {
 //    if (!row) return Embed(msg.channel, `${member} does not have a linked WHMCS account.`, 'error', 'Error');
     let clientUser = await whmcsGet.get({ email: member }, 'GetClientsDetails');
     if (clientUser['result'] !== 'error') {
-        Embed(msg.channel, `URL: [Click](https://billing.plox.host/WHMCS2017SecureLink/clientssummary.php?userid=${clientUser['id']})\nClient ID: ${clientUser['id']}\nEmail: ${clientUser['email']}\nFull Name: ${clientUser['firstname']} ${clientUser['lastname']}\nAddress Line: ${clientUser['address1']} ${clientUser['city']}, ${clientUser['state']}, ${clientUser['countryname']}`, 'main', `▫️${args} | WHMCS Client Lookup`)
+        Embed(msg.channel, `URL: [Click](/clientssummary.php?userid=${clientUser['id']})\nClient ID: ${clientUser['id']}\nEmail: ${clientUser['email']}\nFull Name: ${clientUser['firstname']} ${clientUser['lastname']}\nAddress Line: ${clientUser['address1']} ${clientUser['city']}, ${clientUser['state']}, ${clientUser['countryname']}`, 'main', `▫️${args} | WHMCS Client Lookup`)
     } else {
         return Embed(msg.channel, `That user does not not exist!`, 'error', 'Error');
     }
