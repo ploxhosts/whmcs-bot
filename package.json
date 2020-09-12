@@ -8,7 +8,7 @@
     "express": "^4.17.1",
     "express-fileupload": "^1.1.6-alpha.6",
     "mysql": "^2.17.1",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "pm2": "^4.1.2",
     "sqlite": "^3.0.3",
     "whmcs": "^1.2.2",
