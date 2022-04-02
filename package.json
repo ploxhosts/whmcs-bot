@@ -12,7 +12,7 @@
     "pm2": "^4.1.2",
     "sqlite": "^3.0.3",
     "whmcs": "^1.2.2",
-    "ws": "^7.2.0"
+    "ws": "^7.4.6"
   },
   "main": "app.js",
   "devDependencies": {},
